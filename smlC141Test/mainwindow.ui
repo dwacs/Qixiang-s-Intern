@@ -6,52 +6,67 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1312</width>
-    <height>792</height>
+    <width>1279</width>
+    <height>863</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 13, 18);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTextBrowser" name="manID">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>450</y>
+      <x>30</x>
+      <y>530</y>
       <width>401</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="serNO">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>350</y>
+      <x>30</x>
+      <y>430</y>
       <width>401</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="status">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>400</y>
+      <x>30</x>
+      <y>480</y>
       <width>401</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="eng">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>100</y>
+      <x>30</x>
+      <y>180</y>
       <width>401</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -66,11 +81,14 @@
    <widget class="QTextBrowser" name="pow">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>150</y>
+      <x>30</x>
+      <y>230</y>
       <width>401</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -85,14 +103,14 @@
    <widget class="QTextBrowser" name="voltage">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>200</y>
+      <x>30</x>
+      <y>280</y>
       <width>401</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#frame{border:1px solid rgb(0,255,255)}</string>
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -110,11 +128,11 @@
       <x>0</x>
       <y>0</y>
       <width>1311</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(211, 215, 207);</string>
+     <string notr="true">background-color: rgb(117, 117, 117);</string>
     </property>
     <property name="text">
      <string/>
@@ -123,64 +141,79 @@
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>30</y>
-      <width>231</width>
+      <x>110</x>
+      <y>110</y>
+      <width>241</width>
       <height>61</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; color:#cc0000;&quot;&gt;PTB DC Meter&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; font-weight:600; color:#ffffff;&quot;&gt;PTB DC Meter&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="current">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>250</y>
+      <x>30</x>
+      <y>330</y>
       <width>401</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="pubKey">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>300</y>
+      <x>30</x>
+      <y>380</y>
       <width>401</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="cost">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>500</y>
+      <x>30</x>
+      <y>580</y>
       <width>401</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="duration">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>550</y>
+      <x>30</x>
+      <y>630</y>
       <width>401</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="eng_2">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>100</y>
+      <x>470</x>
+      <y>180</y>
       <width>401</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -195,24 +228,27 @@
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>30</y>
-      <width>181</width>
+      <x>570</x>
+      <y>110</y>
+      <width>191</width>
       <height>61</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; color:#cc0000;&quot;&gt;DC Meter 1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; font-weight:600; color:#ffffff;&quot;&gt;DC Meter 1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="pow_2">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>150</y>
+      <x>470</x>
+      <y>230</y>
       <width>401</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -227,14 +263,14 @@
    <widget class="QTextBrowser" name="voltage_2">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>200</y>
+      <x>470</x>
+      <y>280</y>
       <width>401</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#frame{border:1px solid rgb(0,255,255)}</string>
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -249,21 +285,27 @@
    <widget class="QTextBrowser" name="serNO_2">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>250</y>
+      <x>470</x>
+      <y>330</y>
       <width>401</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="eng_3">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>400</y>
+      <x>470</x>
+      <y>480</y>
       <width>401</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -278,11 +320,14 @@
    <widget class="QTextBrowser" name="pow_3">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>450</y>
+      <x>470</x>
+      <y>530</y>
       <width>401</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -297,14 +342,14 @@
    <widget class="QTextBrowser" name="voltage_3">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>500</y>
+      <x>470</x>
+      <y>580</y>
       <width>401</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#frame{border:1px solid rgb(0,255,255)}</string>
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -319,75 +364,40 @@
    <widget class="QTextBrowser" name="serNO_3">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>550</y>
+      <x>470</x>
+      <y>630</y>
       <width>401</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>330</y>
-      <width>181</width>
+      <x>570</x>
+      <y>410</y>
+      <width>191</width>
       <height>61</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; color:#cc0000;&quot;&gt;DC Meter 2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; font-weight:600; color:#ffffff;&quot;&gt;DC Meter 2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="eng_4">
+   <widget class="QTextBrowser" name="max_input">
     <property name="geometry">
      <rect>
-      <x>950</x>
-      <y>190</y>
-      <width>361</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
-    <property name="lineWidth">
-     <number>3</number>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="pow_4">
-    <property name="geometry">
-     <rect>
-      <x>950</x>
-      <y>240</y>
-      <width>361</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
-    <property name="lineWidth">
-     <number>3</number>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="voltage_4">
-    <property name="geometry">
-     <rect>
-      <x>950</x>
-      <y>290</y>
-      <width>361</width>
+      <x>910</x>
+      <y>230</y>
+      <width>341</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#frame{border:1px solid rgb(0,255,255)}</string>
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -399,27 +409,156 @@
      <number>3</number>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="serNO_4">
+   <widget class="QTextBrowser" name="max_output">
     <property name="geometry">
      <rect>
-      <x>950</x>
-      <y>340</y>
-      <width>361</width>
+      <x>910</x>
+      <y>280</y>
+      <width>341</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="storage_cap">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>330</y>
+      <width>341</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
     </property>
    </widget>
    <widget class="QLabel" name="label_11">
     <property name="geometry">
      <rect>
-      <x>1060</x>
-      <y>120</y>
-      <width>181</width>
+      <x>990</x>
+      <y>110</y>
+      <width>191</width>
       <height>61</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; color:#cc0000;&quot;&gt;DC Meter 1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; font-weight:600; color:#ffffff;&quot;&gt;Cloud input&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>1170</x>
+      <y>40</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
+    </property>
+    <property name="text">
+     <string>Exit</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="nodeNO">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>630</y>
+      <width>341</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="node">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>580</y>
+      <width>341</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="source_type">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>530</y>
+      <width>341</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(189, 189, 189);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>410</y>
+      <width>191</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; font-weight:600; color:#ffffff;&quot;&gt;Node Info&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <zorder>pow</zorder>
@@ -432,7 +571,6 @@
    <zorder>eng</zorder>
    <zorder>current</zorder>
    <zorder>pubKey</zorder>
-   <zorder>cost</zorder>
    <zorder>duration</zorder>
    <zorder>eng_2</zorder>
    <zorder>label_9</zorder>
@@ -444,18 +582,23 @@
    <zorder>voltage_3</zorder>
    <zorder>serNO_3</zorder>
    <zorder>label_10</zorder>
-   <zorder>eng_4</zorder>
-   <zorder>pow_4</zorder>
-   <zorder>voltage_4</zorder>
-   <zorder>serNO_4</zorder>
+   <zorder>max_input</zorder>
+   <zorder>max_output</zorder>
+   <zorder>storage_cap</zorder>
    <zorder>label_11</zorder>
+   <zorder>cost</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>nodeNO</zorder>
+   <zorder>node</zorder>
+   <zorder>source_type</zorder>
+   <zorder>label_12</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1312</width>
+     <width>1279</width>
      <height>28</height>
     </rect>
    </property>

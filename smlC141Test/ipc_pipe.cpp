@@ -57,7 +57,7 @@ void IPC_Pipe::PipeRead(void)
         allData = filein.readAll();
         filein.close();
 
-        qDebug() << "pipe file data:" << allData;
+   //     qDebug() << "pipe file data:" << allData;
         emit signal_pipe_read(allData);
         pthread_mutex_unlock(&pipe_read_lock);
     }

@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
     QRect mm=screen->availableGeometry();
     int screenWidth=mm.width();
     int screenHeight=mm.height();
+
     MainWindow w;
     w.resize(screenWidth,screenHeight);
     w.show();

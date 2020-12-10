@@ -21,6 +21,15 @@ public:
  QString meterID="testmeter1";
 };
 
+class smlClientData
+{
+  public:
+    QString clientID;
+    QString serverID;
+    QString listName;
+    int duration;
+};
+
 class smlMeterData :public QObject
 {  Q_OBJECT
   public:
@@ -46,19 +55,25 @@ private:
 
     QByteArray smlBuf=NULL;   //raw data
     QByteArray smlData=NULL;
+
 uint otectString(int position,QByteArray data);
 int setData(int position,QByteArray data);
+
+
 public:
-     void openPort();
-    QSerialPort *serial;
+QSerialPort *serial;
+smlClientData client1;
 smlMeterData manufacturerID;
 smlMeterData deviceNumber;
 smlMeterData energy;
 smlMeterData power;
 smlMeterData propertyNo;
 smlMeterData voltage;
+
+   void openPort();
    void dataParse();
-void getData(QByteArray data);
+   void getData(QByteArray data);
+   void getClientdata(int dataPosition, QByteArray data);
 
      ~smlMeter();
 

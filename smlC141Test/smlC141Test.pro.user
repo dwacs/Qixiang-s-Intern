@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.10.2, 2020-12-04T19:12:51. -->
+<!-- Written by QtCreator 4.10.2, 2020-12-10T12:42:15. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -275,15 +275,18 @@
        <value type="QString">/home/qixiang/build-smlC141Test-imx_c141-Debug/smlC141Test</value>
        <value type="QString">/home/qixiang/build-smlC141Test-imx_c141-Debug/smlC141Test</value>
        <value type="QString">/home/qixiang/build-smlC141Test-imx_c141-Debug/smlC141Test</value>
+       <value type="QString">/home/qixiang/build-smlC141Test-imx_c141-Debug/smlC141Test</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedHosts">
        <value type="QString">192.168.200.95</value>
-       <value type="QString">192.168.200.92</value>
        <value type="QString">192.168.200.91</value>
+       <value type="QString">192.168.200.88</value>
+       <value type="QString">192.168.200.92</value>
        <value type="QString">192.168.200.95</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedRemotePaths">
        <value type="QString">/home/root</value>
+       <value type="QString">/opt/smlC141Test/bin</value>
        <value type="QString">/opt/smlC141Test/bin</value>
        <value type="QString">/opt/smlC141Test/bin</value>
        <value type="QString">/opt/smlC141Test/bin</value>
@@ -293,19 +296,22 @@
        <value type="QString">/opt/fsl-imx-x11/3.14.52-1.1.1/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi</value>
        <value type="QString">/opt/fsl-imx-x11/3.14.52-1.1.1/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi</value>
        <value type="QString">/opt/fsl-imx-x11/3.14.52-1.1.1/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi</value>
+       <value type="QString">/opt/fsl-imx-x11/3.14.52-1.1.1/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi</value>
       </valuelist>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.IgnoreMissingFiles">false</value>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.Incremental">true</value>
       <valuelist type="QVariantList" key="RemoteLinux.LastDeployedLocalTimes">
        <value type="QDateTime">2020-11-25T13:01:02.243</value>
-       <value type="QDateTime">2020-12-01T03:53:27.907</value>
        <value type="QDateTime">2020-12-01T15:00:50.631</value>
+       <value type="QDateTime">2020-12-10T12:32:34.392</value>
+       <value type="QDateTime">2020-12-01T03:53:27.907</value>
        <value type="QDateTime">2020-11-25T15:29:43.253</value>
       </valuelist>
       <valuelist type="QVariantList" key="RemoteLinux.LastDeployedRemoteTimes">
        <value type="QDateTime">2020-11-25T13:03:03.000</value>
-       <value type="QDateTime">2020-12-01T03:53:37.000</value>
        <value type="QDateTime">2020-12-01T15:00:55.000</value>
+       <value type="QDateTime">2020-12-10T12:32:43.000</value>
+       <value type="QDateTime">2020-12-01T03:53:37.000</value>
        <value type="QDateTime">2020-11-25T15:29:47.000</value>
       </valuelist>
      </valuemap>
@@ -374,8 +380,8 @@
     <value type="int" key="PE.EnvironmentAspect.Base">1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">smlC141Test (on CS)</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinuxRunConfiguration:/home/qixiang/smlC141Test/smlC141Test.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">smlC141Test (on C141)</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinuxRunConfiguration:/home/qixiang/smlMeterRepo/smlC141Test/smlC141Test.pro</value>
     <value type="int" key="RemoteLinux.EnvironmentAspect.Version">1</value>
     <value type="QString" key="RemoteLinux.RunConfig.AlternateRemoteExecutable"></value>
     <value type="bool" key="RemoteLinux.RunConfig.UseAlternateRemoteExecutable">false</value>

@@ -58,7 +58,7 @@ void Thread_nayax::stop(void)
 }
 void Thread_nayax::ptin_datapro(QString data)
 {
-    qDebug() << "ptin: " << data;
+  //  qDebug() << "ptin: " << data;
     QJsonParseError json_error;
     QJsonDocument jsonDoc(QJsonDocument::fromJson(data.toUtf8(), &json_error));
     if(json_error.error != QJsonParseError::NoError)
@@ -90,7 +90,7 @@ void Thread_nayax::nayax_open(smlMeterDataJson *data)
     jsonDoc.setObject(openObject);
     QString str_json = jsonDoc.toJson();
 
-    qDebug() << "ptout: " << str_json;
+   // qDebug() << "ptout: " << str_json;
     //发送写管道信号
     emit ptwrite(str_json);
 }

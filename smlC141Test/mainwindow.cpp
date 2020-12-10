@@ -18,11 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     testTimer->setInterval(1000);
     testTimer->start();
     connect(testTimer,&QTimer::timeout,this,&MainWindow::refreshUI); //test timer is an OBJECT from Qtimer, this represent the object called mainwindow.
-//QScreen *imx335=QGuiApplication::primaryScreen();
-//QRect screenGeometry=imx335->geometry();
-//int height =screenGeometry.height();
-//int width=screenGeometry.width();
-//qDebug()<<"height"<<height<<"width:"<<width;
+
 
 }
 
@@ -43,43 +39,14 @@ QString P;
 QString W;
 QString V;
 QString I;
-//QPainter painter(this);
-//    painter.setPen(QPen(Qt::green,4));
-//painter.setBrush(QColor(112, 173, 71));
-//painter.drawEllipse(20,20,200,200);
+
 QByteArray propertyNoValue,manufacturerIDValue;
 propertyNoValue=QByteArray::fromHex( meterD1A->propertyNo.value);
 manufacturerIDValue=QByteArray::fromHex( meterD1A->manufacturerID.value);
 
-
-//ui->propertyNO->setText(propertyNoValue);
-
-//QFont font=ui->propertyNO->font();
-//font.setPointSize(24);
-//ui->propertyNO->setFont(font);
-
-//ui->ServerID->setText(meterD1A->deviceNumber.value);
-//font.setPointSize(19);
-//ui->ServerID->setFont(font);
-//font.setPointSize(20);
-//font.setBold(true);
-//ui->info->setText("Received");
-//ui->info->setFont(font);\
-
-
-
-
-
-
-
-
-
-
-
-QFont font=ui->eng->font();
+QFont font("Caption",22);
+//QFont font=ui->eng->font();
 font.setPointSize(22);
-
-
 
 
 W=QString::number(energy)+" Wh";
@@ -116,19 +83,21 @@ I=QString::number(power/voltage)+" A";
 
      ui->cost->setFont(font);
      ui->cost->setText("Cost: 0 Euro");
-
+double month;
+QString dur;
+     month=double(meterD1A->client1.duration)/3600/24;
+     qDebug()<<"time---"<<meterD1A->client1.duration<<"version1xxx"<<month<<"xx";
+     dur=QString::number(month,'f',3);
      ui->duration->setFont(font);
-     ui->duration->setText("Duration: NULL");
-//ui->Energy->setDigitCount(5);
-//ui->Energy->display(energy/1000);
-//ui->Power->display(power);
-//ui->info->setText("info");
+     ui->duration->setText("Duration: "+dur+" days");
 
-//set Time
+
+//-----------------set Time------------------
 QDateTime time=QDateTime::currentDateTime();
 QString timeStr=time.toString("yyyy-MM-dd hh:mm:ss.zzz");
-//currentTimeLabel->setText(timeStr);
 QString timeStr2=time.toString("yyyy-MM-dd hh:mm:ss ddd");
+font.setPointSize(14);
+ui->clock->setFont(font);
 ui->clock->setText(timeStr2);
 
 
@@ -142,7 +111,61 @@ meterDataJSON->energy=W;
 meterDataJSON->timeStamp=timeStr;
 meterDataJSON->chargerID=meterD1A->deviceNumber.value;
    meterData->nayax_open(meterDataJSON);
+
+   //------------set meter1-----------------------
+   font.setPointSize(22);
+   ui->eng_2->setFont(font);
+   ui->eng_2->setText("Energy: ");
+
+   ui->pow_2->setFont(font);
+   ui->pow_2->setText("Power: ");
+
+   ui->voltage_2->setFont(font);
+   ui->voltage_2->setText("Voltage: ");
+
+
+   ui->serNO_2->setFont(font);
+   ui->serNO_2->setText("SN: ");
+
+   //-------------Set meter2 ---------------------
+   ui->eng_3->setFont(font);
+   ui->eng_3->setText("Energy: ");
+
+   ui->pow_3->setFont(font);
+   ui->pow_3->setText("Power: ");
+
+   ui->voltage_3->setFont(font);
+   ui->voltage_3->setText("Voltage: ");
+
+
+   ui->serNO_3->setFont(font);
+   ui->serNO_3->setText("SN: ");
+
+   //---------------set cloud input
+   ui->max_input->setFont(font);
+   ui->max_input->setText("Max Input (kW): ");
+
+   ui->max_output->setFont(font);
+   ui->max_output->setText("Max Output (kW): ");
+
+   ui->storage_cap->setFont(font);
+   ui->storage_cap->setText("Storage Cap (kWh): ");
+
+   ui->source_type->setFont(font);
+   ui->source_type->setText("Source type: ");
+
+   ui->node->setFont(font);
+   ui->node->setText("Slave");
+
+   ui->nodeNO->setFont(font);
+   ui->nodeNO->setText("Node No.: ");
+
 }
 
 
 
+
+void MainWindow::on_pushButton_clicked()
+{
+    QApplication::exit();
+}

@@ -35,9 +35,7 @@ void smlMeter::readData()
 {
 smlBuf.append(serial->readAll());
 dataParse();
-//qDebug()<<"data"<<smlBuf.left(4);
-//qDebug()<<"datatoLatin"<<smlBuf.mid(10,3);
-//qDebug()<<"HEXData"<<smlBuf.toHex();
+
    smlBuf.clear();
 }
 
@@ -49,7 +47,7 @@ void smlMeter::dataParse()
        {
         smlData.append(tempData);
     //qDebug()<<"startsml"<<tempData;
-    if(tempData.contains("001b1b1b1b"))
+    if(tempData.contains("1b1b1b1b1a"))
     { getData(smlData);
        // qDebug()<<"endofsmlbyoneline";
               smlData.clear();
@@ -74,6 +72,9 @@ void smlMeter::getData(QByteArray data)
     QString objName;
 
    getList=data.indexOf("726500000701");   //getList response
+   getList=data.indexOf("77",getList);
+getClientdata( getList,data);
+
    getList=data.indexOf("7677",getList);   //find obj name
  //qDebug()<<"getlist"<<getList<<"dwacs"<<data.mid(getList)<<"rightshift2"<<data.mid(getList+2,2);
    getList+=2;
@@ -92,21 +93,14 @@ if(data.mid(getList,2)=="77")
        setData(dataLength,data);
 
 
-//qDebug()<<energy.value<<"value"<<energy.scaler<<"scalar"<<energy.unit<<"unit";
-//qDebug()<<power.value<<"powervalue"<<power.scaler<<"pwscalar"<<power.unit<<"unit";
-//qDebug()<<propertyNo.value<<"PRoNO"<<propertyNo.scaler<<"pronocalar"<<propertyNo.unit<<"unit";
-//qDebug()<<voltage.value<<"VoltageValue"<<voltage.scaler<<"voscalar"<<voltage.unit<<"unit";
 
 }
-else{qDebug()<<"not found";}
+else{qDebug()<<"get data not found";}
 
 
 //    octet 65 62 63 52 59
 //    code 76 72 77
 }
-
-
-
 
 
 int smlMeter::setData(int position,QByteArray data)
@@ -372,8 +366,6 @@ case 5:
                newPosition+=length;
           }
 
-
-
     length=otectString(newPosition,data);
    // qDebug()<<"lengthnew"<<length<<"lengthnew";
     if (length==0)  {newPosition+=2;   //01 xx.
@@ -406,8 +398,6 @@ case 5:
                 voltage.valueSignature=data.mid(newPosition,length);
                newPosition+=length;
           }
-
-
 
 
     break;
@@ -448,6 +438,65 @@ else
 }
 }
 
+void smlMeter::getClientdata(int dataPosition,QByteArray data)
+{
+    uint  dataLength;
+bool ok;
+    dataPosition+=2;
+    dataLength=otectString(dataPosition,data);
+
+    if (dataLength==0)
+    {dataPosition+=2;   //01 xx.
+      client1.clientID="Not Set";
+    }
+    else
+    {dataPosition+=2;
+        client1.clientID=data.mid(dataPosition,dataLength);
+        dataPosition+=dataLength;}
+
+    dataLength=otectString(dataPosition,data);
+
+    if (dataLength==0)  {
+        dataPosition+=2;   //01 xx.
+              client1.serverID="NULL";
+              }
+          else {
+               dataPosition+=2;
+                client1.serverID=data.mid(dataPosition,dataLength);
+
+               dataPosition+=dataLength;
+          }
+
+    dataLength=otectString(dataPosition,data);
+
+    if (dataLength==0)  {
+        dataPosition+=2;
+              client1.listName="NULL";
+              }
+          else {
+               dataPosition+=2;
+                client1.listName=data.mid(dataPosition,dataLength);
+
+               dataPosition+=dataLength;
+          }
+
+    dataPosition=data.indexOf("65",dataPosition);
+    dataLength=otectString(dataPosition,data);
+qDebug()<<"dataLength"<<dataLength<<"xxx";
+    if (dataLength==0)  {
+        dataPosition+=2;
+              client1.duration=0;
+
+              }
+          else {
+        QString timeT;
+               dataPosition+=2;
+               timeT=data.mid(dataPosition,dataLength);
+               client1.duration=data.mid(dataPosition,dataLength).toUInt(&ok,16);
+
+               dataPosition+=dataLength;
+          }
+}
 
 smlMeter::~smlMeter()
 {delete serial;}

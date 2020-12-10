@@ -41,5 +41,6 @@ private:
 
 private slots:
       void refreshUI();
+      void on_pushButton_clicked();
 };
 #endif // MAINWINDOW_H
