@@ -33,73 +33,70 @@ void smlMeter::openPort()
 
 void smlMeter::readData()
 {
-smlBuf.append(serial->readAll());
-dataParse();
+smlBuf.append(serial->readAll());         // after reading all the data from the serial port
+dataParse();               //parse the data
 
    smlBuf.clear();
 }
 
+
 void smlMeter::dataParse()
 { QByteArray tempData=nullptr;
-    tempData=smlBuf.toHex();
+    tempData=smlBuf.toHex();            //convert all data to hex format
 
-    if(tempData.left(8)=="1b1b1b1b")             //start sml
+    if(tempData.left(8)=="1b1b1b1b")                                                 //find the "start sml"
        {
         smlData.append(tempData);
-    //qDebug()<<"startsml"<<tempData;
-    if(tempData.contains("1b1b1b1b1a"))
+
+    if(tempData.contains("1b1b1b1b1a"))           //find the "end of the sml"
     { getData(smlData);
        // qDebug()<<"endofsmlbyoneline";
               smlData.clear();
     }
     }
-    else{                                          // if in transmission
+    else{                                                                           // if "start sml" not found, the data is in transmission
     if(tempData.contains("1b1b1b1b"))            //if end of the file, start read
     {smlData.append(tempData);
 
-        getData(smlData);
-       // qDebug()<<"endofsml"<<smlData;
+        getData(smlData);                      //Extract the data from the sml data pack
+
         smlData.clear();
 //smlData.append(tempData);
     }
-    else{smlData.append(tempData);}
+    else{smlData.append(tempData);}             //if "end of the sml" not found, means the data still in transmission, continue append the data.
     }
 
 }
+
+
 void smlMeter::getData(QByteArray data)
 { int getList;
     int dataLength=0;
     QString objName;
 
-   getList=data.indexOf("726500000701");   //getList response
-   getList=data.indexOf("77",getList);
-getClientdata( getList,data);
+   getList=data.indexOf("726500000701");   //find the getList response
+   getList=data.indexOf("77",getList);    //find the client data head "77"
+getClientdata( getList,data);                 // Parse the data, and record the client data
 
-   getList=data.indexOf("7677",getList);   //find obj name
- //qDebug()<<"getlist"<<getList<<"dwacs"<<data.mid(getList)<<"rightshift2"<<data.mid(getList+2,2);
+   getList=data.indexOf("7677",getList);   //find the obj name
+
    getList+=2;
-if(data.mid(getList,2)=="77")
+if(data.mid(getList,2)=="77")          // find the meter data head "77"
 {
 
-  // qDebug()<<"getlist2"<<getList;
 
-     dataLength=setData(getList,data);
-    // qDebug()<<"nowpos"<<data.mid(dataLength,4)<<"now";
-    dataLength=setData(dataLength,data);
-  //  qDebug()<<"nowpos"<<data.mid(dataLength,4)<<"now";
-      dataLength=setData(dataLength,data);
-      dataLength=setData(dataLength,data);
-        dataLength=setData(dataLength,data);
-       setData(dataLength,data);
+     dataLength=setData(getList,data);           // read the manufacture ID
+    dataLength=setData(dataLength,data);          // read the device number
+      dataLength=setData(dataLength,data);        //read the energy
+      dataLength=setData(dataLength,data);         // read the active power
+        dataLength=setData(dataLength,data);     //read the property number
+       setData(dataLength,data);                  //read the voltage
 
 
 
 }
 else{qDebug()<<"get data not found";}
 
-
-//    octet 65 62 63 52 59
-//    code 76 72 77
 }
 
 
@@ -114,11 +111,11 @@ objList<<"8181c78203ff"<<"0100000009ff"<<"0100010800ff"<<"0100100700ff"<<"010000
 
  int newPosition;
  newPosition=position+2;         //after 77
-length=data.mid(newPosition,2).toUInt()*2-2;  //find next data length
+length=data.mid(newPosition,2).toUInt()*2-2;  //find next data length  || Length*2 because xFF was recorded in string format, so one Byte in string format should x2.
 newPosition+=2;
-//qDebug()<<"length1st"<<length<<"realnumber"<<data.mid(newPosition,2);
+
 objName=data.mid(newPosition,length);          //set data first is object name
-newPosition+=length;                      //01 XXXX
+newPosition+=length;
 length=data.mid(newPosition,2).toUInt();
 switch(objList.indexOf(objName))
 {
@@ -135,7 +132,7 @@ manufacturerID.scaler=0;
 manufacturerID.value=data.mid(newPosition,length);
 manufacturerID.valueSignature="NULL";
 newPosition+=(length+2); //+2for value sig +2 for datalength of value
-//qDebug()<<"newpos"<<data.mid(newPosition,2)<<manufacturerID.value<<"value";
+
 break;
 }
 case 1: { //device number
@@ -309,7 +306,7 @@ case 3:{ //active power
 
     break;
 }
-case 4:
+case 4:           // property number
 { newPosition+=8;
     length=data.mid(newPosition,2).toUInt(&ok,16)*2-2;
    // qDebug()<<"newpos"<<length<<data.mid(newPosition,length)<<"value";
@@ -321,15 +318,15 @@ case 4:
     propertyNo.value=data.mid(newPosition,length);
     propertyNo.valueSignature="NULL";
     newPosition+=(length+2); //+2for value sig +2 for datalength of value
-    //qDebug()<<"newpos"<<data.mid(newPosition,2)<<manufacturerID.value<<"value";
+
     break;
 }
-case 5:
+case 5:          // voltage
 {
 
-   // qDebug()<<"nowposddddd"<<data.mid(position,18)<<"dddddnow";
+
       length=otectString(newPosition,data);
-     // qDebug()<<"lengthnew"<<length<<"lengthnew";
+
       if (length==0)
       {newPosition+=2;   //01 xx.
         voltage.status="NULL";
@@ -341,7 +338,7 @@ case 5:
 
 
     length=otectString(newPosition,data);
-    //qDebug()<<"lengthnew"<<length<<"lengthnew";
+
     if (length==0)  {
 
         newPosition+=2;   //01 xx.
@@ -355,7 +352,7 @@ case 5:
 
 
     length=otectString(newPosition,data);
-    //qDebug()<<"lengthnew"<<length<<"lengthnew";
+
     if (length==0)  {newPosition+=2;   //01 xx.
               voltage.unit=0;
               }
@@ -367,7 +364,7 @@ case 5:
           }
 
     length=otectString(newPosition,data);
-   // qDebug()<<"lengthnew"<<length<<"lengthnew";
+
     if (length==0)  {newPosition+=2;   //01 xx.
               voltage.scaler=0;
               }
@@ -380,7 +377,7 @@ case 5:
           }
 
     length=otectString(newPosition,data);
-   // qDebug()<<"xqx"<<data.mid(newPosition,14)<<"xqx";
+
     if (length==0)  {newPosition+=2;   //01 xx.
               voltage.value="NULL";
               }
@@ -411,12 +408,12 @@ return newPosition;
 uint smlMeter::otectString(int position,QByteArray data)
 {bool ok;
     uint length;
-    QStringList otetString;
-    otetString<<"0"<<"5"<<"6";
-      length=data.mid(position,2).toUInt();
-    if(length-1!=0)
+    QStringList otectString;
+    otectString<<"0"<<"5"<<"6";                   //Parse the otect string, eg 0b means the following data length is  0b-01=10 Bytes.
+      length=data.mid(position,2).toUInt();     //  59 means following data is integer 32 bit and the length is 9-1=8 Bytes
+    if(length-1!=0)                             // 63 means unsigned 16. length is 3-1=2Bytes
    {length=data.mid(position,2).toUInt();
-    switch(otetString.indexOf(data.mid(position,1)))
+    switch(otectString.indexOf(data.mid(position,1)))
    {
    case 0:
       length=data.mid(position,2).toUInt(&ok,16)*2-2;

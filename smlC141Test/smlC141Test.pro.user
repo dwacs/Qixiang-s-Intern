@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.10.2, 2020-12-10T12:42:15. -->
+<!-- Written by QtCreator 4.10.2, 2020-12-12T12:11:47. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -279,16 +279,16 @@
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedHosts">
        <value type="QString">192.168.200.95</value>
-       <value type="QString">192.168.200.91</value>
-       <value type="QString">192.168.200.88</value>
        <value type="QString">192.168.200.92</value>
+       <value type="QString">192.168.200.88</value>
        <value type="QString">192.168.200.95</value>
+       <value type="QString">192.168.200.91</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedRemotePaths">
+       <value type="QString">/opt/smlC141Test/bin</value>
+       <value type="QString">/opt/smlC141Test/bin</value>
+       <value type="QString">/opt/smlC141Test/bin</value>
        <value type="QString">/home/root</value>
-       <value type="QString">/opt/smlC141Test/bin</value>
-       <value type="QString">/opt/smlC141Test/bin</value>
-       <value type="QString">/opt/smlC141Test/bin</value>
        <value type="QString">/opt/smlC141Test/bin</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedSysroots">
@@ -301,18 +301,18 @@
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.IgnoreMissingFiles">false</value>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.Incremental">true</value>
       <valuelist type="QVariantList" key="RemoteLinux.LastDeployedLocalTimes">
+       <value type="QDateTime">2020-11-25T15:29:43.253</value>
+       <value type="QDateTime">2020-12-01T03:53:27.907</value>
+       <value type="QDateTime">2020-12-10T15:45:10.045</value>
        <value type="QDateTime">2020-11-25T13:01:02.243</value>
        <value type="QDateTime">2020-12-01T15:00:50.631</value>
-       <value type="QDateTime">2020-12-10T12:32:34.392</value>
-       <value type="QDateTime">2020-12-01T03:53:27.907</value>
-       <value type="QDateTime">2020-11-25T15:29:43.253</value>
       </valuelist>
       <valuelist type="QVariantList" key="RemoteLinux.LastDeployedRemoteTimes">
+       <value type="QDateTime">2020-11-25T15:29:47.000</value>
+       <value type="QDateTime">2020-12-01T03:53:37.000</value>
+       <value type="QDateTime">2020-12-10T15:45:15.000</value>
        <value type="QDateTime">2020-11-25T13:03:03.000</value>
        <value type="QDateTime">2020-12-01T15:00:55.000</value>
-       <value type="QDateTime">2020-12-10T12:32:43.000</value>
-       <value type="QDateTime">2020-12-01T03:53:37.000</value>
-       <value type="QDateTime">2020-11-25T15:29:47.000</value>
       </valuelist>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">3</value>

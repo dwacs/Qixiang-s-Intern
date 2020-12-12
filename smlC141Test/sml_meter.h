@@ -10,7 +10,7 @@
 
 #include"unit.h"
 
-class smlMeterDataJson:public QObject
+class smlMeterDataJson:public QObject       //Define a class for D2C transmission
 {Q_OBJECT
 public:
  QString energy;
@@ -21,7 +21,7 @@ public:
  QString meterID="testmeter1";
 };
 
-class smlClientData
+class smlClientData                  // Define a class to record the client data from the DC meter
 {
   public:
     QString clientID;
@@ -30,13 +30,13 @@ class smlClientData
     int duration;
 };
 
-class smlMeterData :public QObject
+class smlMeterData :public QObject      //Define a class to record the meter data. such as energy, voltage ....
 {  Q_OBJECT
   public:
     //  quint8 group_id;
-       QString transactionID;
-       quint8 abortOnError;
-       quint16 crc;
+     //  QString transactionID;
+      // quint8 abortOnError;
+       //quint16 crc;
        //sml list
 
     QByteArray objName;
@@ -47,7 +47,10 @@ class smlMeterData :public QObject
        QByteArray value;
        QByteArray valueSignature;
 };
-class smlMeter :public QObject
+
+
+
+class smlMeter :public QObject        // Define a class to implement the meter function.
 {  friend smlMeterData;
     Q_OBJECT
 private:
@@ -56,8 +59,8 @@ private:
     QByteArray smlBuf=NULL;   //raw data
     QByteArray smlData=NULL;
 
-uint otectString(int position,QByteArray data);
-int setData(int position,QByteArray data);
+uint otectString(int position,QByteArray data);           //Parse the otect string and return the length of the string for reading.
+int setData(int position,QByteArray data);             // Record the data from the sml meter and return the data position after that data.
 
 
 public:
@@ -70,16 +73,16 @@ smlMeterData power;
 smlMeterData propertyNo;
 smlMeterData voltage;
 
-   void openPort();
-   void dataParse();
-   void getData(QByteArray data);
-   void getClientdata(int dataPosition, QByteArray data);
+   void openPort();     // open serial port
+   void dataParse();    // Parse the meter data
+   void getData(QByteArray data);  // extract the meter data from the sml data pack
+   void getClientdata(int dataPosition, QByteArray data);  // extract the client data from the sml data pact
 
      ~smlMeter();
 
 private slots:
 
-   void readData();
+   void readData();   // read the data from the IR sensor
 
 
 };

@@ -1,5 +1,5 @@
 #include<QHash>
-class smlUnits
+class smlUnits    // define a class for data unit. This function is not currently needed
 {
 public:
     QString *unit;
