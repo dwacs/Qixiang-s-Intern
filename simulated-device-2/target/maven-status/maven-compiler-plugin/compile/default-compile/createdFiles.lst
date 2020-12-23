@@ -1,0 +1,8 @@
+com/microsoft/docs/iothub/samples/SimulatedDevice$DirectMethodCallback.class
+com/microsoft/docs/iothub/samples/SimulatedDevice$TelemetryDataPoint.class
+com/microsoft/docs/iothub/samples/SimulatedDevice.class
+com/microsoft/docs/iothub/samples/SimulatedDevice$EventCallback.class
+com/microsoft/docs/iothub/samples/SimulatedDevice$DirectMethodStatusCallback.class
+com/microsoft/docs/iothub/samples/SimulatedDevice$meterData.class
+com/microsoft/docs/iothub/samples/SimulatedDevice$1.class
+com/microsoft/docs/iothub/samples/SimulatedDevice$MessageSender.class
